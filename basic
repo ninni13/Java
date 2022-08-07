@@ -8,3 +8,14 @@ e. main() 括弧內若不寫東西，編譯會過但無法執行，因為就不�
 type
 a. char -> 只能用單引號，裡面放一個字母
 b. String -> 用雙引號，不是八大型別
+c. 宣告 float i = 0.0 -> 編譯發生錯誤，數字旁沒有標F，預設就會是D(Double)，兩邊型態不相等故發生錯誤
+
+跳脫字元
+a. \': 單引號 (\可省略) -> System.out.print("'HelloWorld'") >> 'HelloWorld'
+*b. \": 雙引號 -> System.out.print(""HelloWorld'"") >> error -> System.out.print("\"HelloWorld\"") >> "HelloWorld"
+*c. \\: 反斜線 (如要表示檔案路徑也可用/) -> System.out.print("C:\desktop\xxx.pptx") >> error -> System.out.print("C:\\desktop\\xxx.pptx") >> "C:\desktop\xxx.pptx"
+*d. \n: 換行
+e. \t: Tab
+f. \b: 倒退一格
+g. \f: 換頁
+h. \r: Enter鍵
