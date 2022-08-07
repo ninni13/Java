@@ -5,7 +5,25 @@ c. 寫 String args[] 也可以
 d. 如果寫 Main 不行執行，因為就不是程式進入點
 e. main() 括弧內若不寫東西，編譯會過但無法執行，因為就不是程式進入點
 
-宣告 static 此類別所有物件共同擁有
+宣告 static 代表此類別所有物件共同擁有
+
+變數宣告
+a. 基本宣告: <型態><名稱> -> int i; int j, k;
+b. 宣告再給值(區域變數才可以): int i; i = 0;
+c. 宣告並給值: int i = 0;
+區域變數在宣告時不會自動設定初值
+實體變數在宣告時會自動設定初值，但不能在宣告後又在指定初始值，編譯會error
+
+八大型別初始值
+byte: 0
+short: 0
+int: 0
+long: 0L
+float: 0.0F
+double: 0.0D
+char: '\u0000'
+boolean: false
+All Re
 
 type
 a. char -> 只能用單引號，裡面放一個字母
