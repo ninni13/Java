@@ -130,3 +130,12 @@ for(int i=0 ; i<tokens.length ; i++) {
 >>> How
 >>> are
 >>> you
+
+練習:
+String str = "rainbow.png";
+int pos = str.indexOf('.');
+System.out.println(pos);
+String str1 = str.substring(0, pos);
+String str2 = str.substring(pos+1);
+System.out.println(str1);
+System.out.println(str2);	
