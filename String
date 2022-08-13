@@ -1,0 +1,40 @@
+String物件特性
+a. 不可變的(immutable)字串: 
+   一旦宣告便不能在原所在記憶體位置改變內容
+   使用String類別中的任何方法時，傳回的字串都會安置在新的記憶體空間
+b. String s1 = new String("Hello");
+   有自己獨立的記憶體空間
+c. String s1 = "Hello"
+   如果程式中有數個變數都是相同的字串內容，會使用相同的記憶體空間(即字串池String Pool)，會加快執行速度
+
+public static void main (String[] args) {
+  String str1 = new String("Hello");
+  String str2 = new String("Hello"); 
+  String str3 = "Hello";
+  String str4 = "Hello";
+  System.out.println(str1 == str2);
+  System.out.println(str3 == str4);
+  System.out.println(str1 == str3);
+  System.out.println(str2 == str4);
+}
+>>> false
+>>> true
+>>> false
+>>> false
+
+如果要比較字串內容，不應該使用==，因為==在java中是比較位址(比較是否使用相同的記憶體空間)。
+應使用equals方法
+public static void main (String[] args) {
+  String str1 = new String("Hello");
+  String str2 = new String("Hello"); 
+  String str3 = "Hello";
+  String str4 = "Hello";
+  System.out.println(str1.equals(str2));
+  System.out.println(str3.equals(str4));
+  System.out.println(str1.equals(str3));
+  System.out.println(str2.equals(str4));
+}
+>>> true
+>>> true
+>>> true
+>>> true
