@@ -15,3 +15,34 @@ System.out.print(s1 == s2) >>> true 因為記憶體位址相同
 int i = 10;
 int j = 10;
 System.out.print(i == j) >>> true 因為變數值相同
+
+＊ Java只有傳值
+傳值 Pass by value
+如果傳入的參數為基本資料型態(primitive型態)時，在method內對參數的改變不會影響原來在method外變數的值
+public class PassArgTest{
+  static void passValue(double value){
+    value = 20.0;
+  }
+}
+public static void main(String[] args){
+  double price = 10.0;
+  passValue(price);
+  System.out.println(price);
+}
+>>>10.0
+
+傳址 Pass by address
+如果傳入的參數為物件參考變數或陣列(reference型態)時，無法更動reference對象，
+但可更動reference對象原變數的值，也可使用reference對象的methods與變數
+public class PassArgTest{
+  static void passReference(Shoe myShoe){
+    myShoe price = 20.0;
+  }
+}
+public static void main(String[] args){
+  Shoe myShoe = new Shoe();
+  myShoe.price = 10.0
+  passReference(myShoe);
+  System.out.println(myShoe.price);
+}
+>>>10.0
