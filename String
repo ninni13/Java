@@ -38,3 +38,32 @@ public static void main (String[] args) {
 >>> true
 >>> true
 >>> true
+
+常用方法
+a. public int length(): 傳回字串長度
+//測試 int length();
+String x = "HelloWorld";
+int len = x.length();
+System.out.println("共 " + len + " 字");
+>>> 共 11 字
+
+b. public boolean isEmpty(): 如果length()為0，則傳回true，否則傳回false
+//測試空字串 String str = "";
+String str = "";
+//Java6 以前
+System.out.println(str.length()==0);
+//Java6 開始
+System.out.println(str.isEmpty());
+>>> true
+>>> true
+
+c. public char charAt(int index): 透過索引值(從0開始算)來取得字串內某一位置的字元
+//char charAt(int index)
+String s = "987654321";
+char ch = s.charAt(3);
+System.out.println(ch);
+>>> 6
+
+d. public String substring(int beginIndex): 擷取從開始索引值的字元到字串的最後
+
+e. public String substring(int beginIndex, int endIndex): 擷取從開始索引值的字元到結束索引值之間的字串
