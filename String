@@ -111,7 +111,7 @@ System.out.println(s.indexOf('z'));
 >>> 5
 >>> -1
 
-l. 
+l. public String[] split(String regex, int limit): 根據指定字元來切割字串
 // 根據比對樣式，切割字串，回傳String陣列
 String str = "How-are-you";
 String[] tokens = str.split("-");
