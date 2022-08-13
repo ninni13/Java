@@ -1,0 +1,14 @@
+選擇性敘述是用來決定某一個或是多個敘述要不要被執行
+a. 單向選擇: if
+b. 雙向選擇: if-else
+c. 多重選擇: if-else if-else / switch-case
+如果敘述只有一行可以省略大括號{}
+通常和關係運算子搭配使用(==, !=, >, >=, <, <=)
+
+if-else statement
+
+
+switch-case
+a. 變數可為整數、字元、字串(java7開始)
+b. 不能用浮點數，會有誤差
+c. 若省略break，會繼續執行下一個case的敘述
