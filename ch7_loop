@@ -1,0 +1,25 @@
+迴圈三要素:
+a. 初值設定: 控制迴圈執行變數的起始值
+b. 條件判斷: 判斷是否重複執行迴圈的依據，true便進入迴圈，false便離開迴圈
+c. 計次: 多用來控制迴圈執行變數，通常是設定遞增或遞減運算式(i++ / i--)
+
+java有三種迴圈:
+a. for -> 如果執行前已可確定次數，通常會選用for
+for(初值設定; 條件判斷; 計次){
+  // statement
+}
+
+b. while -> 如果執行前不確定次數，可選while/do...while
+while(條件判斷){
+  // statement
+}
+
+c. do...while -> 如果執行前不確定次數，可選while/do...while，不管條件為何一定會執行一次(較少使用)
+do{
+  // statement
+} while(條件判斷);
+
+break: 跳離迴圈(只能在迴圈和switch-case內使用)
+continue: 跳過continue以下的敘述，再回到迴圈繼續執行下一次
+break & continue通常會配合if敘述與標籤一起使用
+要注意無窮迴圈的問題
