@@ -7,16 +7,14 @@ b. String s1 = new String("Hello");
 c. String s1 = "Hello"
    如果程式中有數個變數都是相同的字串內容，會使用相同的記憶體空間(即字串池String Pool)，會加快執行速度
 
-public static void main (String[] args) {
-  String str1 = new String("Hello");
-  String str2 = new String("Hello"); 
-  String str3 = "Hello";
-  String str4 = "Hello";
-  System.out.println(str1 == str2);
-  System.out.println(str3 == str4);
-  System.out.println(str1 == str3);
-  System.out.println(str2 == str4);
-}
+String str1 = new String("Hello");
+String str2 = new String("Hello"); 
+String str3 = "Hello";
+String str4 = "Hello";
+System.out.println(str1 == str2);
+System.out.println(str3 == str4);
+System.out.println(str1 == str3);
+System.out.println(str2 == str4);
 >>> false
 >>> true
 >>> false
@@ -24,16 +22,15 @@ public static void main (String[] args) {
 
 如果要比較字串內容，不應該使用==，因為==在java中是比較位址(比較是否使用相同的記憶體空間)。
 應使用equals方法
-public static void main (String[] args) {
-  String str1 = new String("Hello");
-  String str2 = new String("Hello"); 
-  String str3 = "Hello";
-  String str4 = "Hello";
-  System.out.println(str1.equals(str2));
-  System.out.println(str3.equals(str4));
-  System.out.println(str1.equals(str3));
-  System.out.println(str2.equals(str4));
-}
+
+String str1 = new String("Hello");
+String str2 = new String("Hello"); 
+String str3 = "Hello";
+String str4 = "Hello";
+System.out.println(str1.equals(str2));
+System.out.println(str3.equals(str4));
+System.out.println(str1.equals(str3));
+System.out.println(str2.equals(str4));
 >>> true
 >>> true
 >>> true
@@ -65,5 +62,71 @@ System.out.println(ch);
 >>> 6
 
 d. public String substring(int beginIndex): 擷取從開始索引值的字元到字串的最後
-
 e. public String substring(int beginIndex, int endIndex): 擷取從開始索引值的字元到結束索引值之間的字串
+//測試 String substring(int beginIndex) , substring(int beginIndex, int endIndex) 
+String s1 = "Hello World";
+String s2 = s1.substring(3);
+System.out.println(s2);   
+String s3 = s1.substring(3, 8);
+System.out.println(s3);  
+>>> lo World
+>>> lo Wo
+
+f. public String replace(char oldChar, char newChar): 把舊字元改成新字元
+//測試 String replace(char oldChar, char newChar)
+String s = "Hello World";
+s = s.replace('l','i');
+System.out.println(s);
+>>> Heiio Worid
+
+g. public String trim(): 刪除字串前後的空白
+//測試 String trim();	
+String s = "  Hello World  ";
+System.out.println(s + ":長度為 " + s.length() );
+//刪除前後的空白
+s = s.trim();
+System.out.println(s + ":長度為 " + s.length() );
+>>>  Hello World  :長度為 15
+>>> Hello World:長度為 11
+
+h. public int indexOf(int ch): 搜尋第一次出現指定字元的索引值並回傳
+i. public int indexOf(int ch, int fromIndex): 從指定索引值開始，搜尋第一次出現指定字元的索引值並回傳
+j. public int indexOf(String str): 搜尋第一次出現指定字串的索引值並回傳
+k. public int indexOf(String str, int fromIndex): 從指定索引值開始，搜尋第一次出現指定字串的索引值並回傳
+//搜尋某字元的位置: int indexOf(int ch) / int indexOf(int ch, int fromIndex)
+//搜尋某字串的位置: int indexOf(String str) / int indexOf(String str, int fromIndex)
+	  
+String s = "How are you";
+
+//求得字元'o'第一次出現的位置
+System.out.println(s.indexOf('o'));
+//從第6個字元開始，搜尋'o'第一次出現的位置
+System.out.println(s.indexOf('o', 5));
+//從第1個字元開始，搜尋"re"第一次出現的位置
+System.out.println(s.indexOf("re", 0));
+//如果指定的文字不存在，則傳回-1
+System.out.println(s.indexOf('z'));
+>>> 1
+>>> 9
+>>> 5
+>>> -1
+
+l. 
+// 根據比對樣式，切割字串，回傳String陣列
+String str = "How-are-you";
+String[] tokens = str.split("-");
+for(int i=0 ; i<tokens.length ; i++) {
+    System.out.println(tokens[i]);
+}   
+>>> How
+>>> are
+>>> you
+* 但如果字串是由.隔開並不能直接使用"."，而是要用"[.]+"。+是指任意多個重複字元
+String str = "How.are.you";
+String[] tokens = str.split("[.]+");
+for(int i=0 ; i<tokens.length ; i++) {
+    System.out.println(tokens[i]);
+}  
+>>> How
+>>> are
+>>> you
