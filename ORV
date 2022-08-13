@@ -1,0 +1,17 @@
+物件參考變數 Object Reference Variables
+宣告: <類別名稱><變數名稱> -> Shoe myShoe;
+實體化物件: 如果要產生該物件真正的記憶體空間，必須以關鍵字new來建立 -> new Shoe();
+初始化物件: 用=(指定運算子)指派該物件至物件參考變數 -> myShoe = new Shoe();
+
+記憶體空間不同:
+Shoe s1 = new Shoe();
+Shoe s2 = new Shoe();
+System.out.print(s1 == s2) >>> false 因為記憶體位址不同
+記憶體空間相同:
+Shoe s1 = new Shoe();
+Shoe s2 = s1;
+System.out.print(s1 == s2) >>> true 因為記憶體位址相同
+＊
+int i = 10;
+int j = 10;
+System.out.print(i == j) >>> true 因為變數值相同
