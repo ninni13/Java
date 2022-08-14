@@ -1,0 +1,11 @@
+方法多載 Overloading
+類似功能的方法可以有同樣的方法名稱，java會自動根據參數的型態和數量來呼叫相對應的方法。
+public void print(int i)
+public void print(float j)
+public void print(double k)
+但要注意的是若參數型態及數量皆相同，就會發生重複宣告的錯誤，就算傳回值型態不同也不行
+void mothod(int i)
+int mothod(int j)
+string mothod(int k)
+
+java API -> java.lang -> System -> PrintStream
