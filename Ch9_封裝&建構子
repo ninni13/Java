@@ -1,5 +1,90 @@
-封裝 Encapsulation
-某class設計者可以決定其他class能不能讀取自己的class
+封裝 Encapsulation -> 用公開的方法存取私有的變數
+a. 某class設計者可以決定其他class能不能讀取自己的class
+b. 資料封裝的基本就是類別(class)
+c. 對物件資料的存取動作，都必須透過此物件的成員方法當作介面進行，分成四個等級:
+   public: 所有類別皆可存取
+   protected: 
+   預設: 同一套件(package)的類別才能存取
+   private: 同一類別才能存取
 
+實體變數通常設定為private，用set/get來存取資料
+public class Goods {
+	  private int gno;
+	  private double gprice;
+	    
+	  public void setGno(int gno){
+	    	this.gno = gno;  //存商品編號資料
+	  }
+	  public int getGno() {
+	    	return gno;  //取商品編號資料
+	  } 
+	    
+	  public void setGprice(double gprice){
+	    	this.gprice = gprice;  //存商品價格資料
+	  }
+	  public double getGprice(){
+	    	return gprice;  //取商品價格資料
+	  }
+
+}
+如果直接取員工資料
+public class GoodsTest { 
+  
+	  public static void main(String[] args) {
+	      Goods g1 = new Goods();
+
+	      System.out.println(g1.gno());
+	      System.out.println(g1.gprice());
+	  }
+    
+}
+會編譯錯誤，因為gno和gprice在Goods類別裡是private access
+應更正如下:
+public class GoodsTest {
+
+	public static void main(String[] args) {
+	      Goods g1 = new Goods();
+
+	      g1.setGno(0001);
+	      g1.setGprice(100.0);
+	          
+	      System.out.println(g1.getGno());  //0001
+	      System.out.println(g1.getGprice());  //100.0
+	}
+
+}
 
 建構子 Constructors
+建構子名稱和類別(class)同名
+宣告: [modifier] constructor_name([arguments]){...}
+a. 一個類別可以宣告多個建構子
+b. 可有零或多個參數
+c. 跟方法(method)一樣可以有存取控制修飾子(public, private)
+d. 沒有回傳值，如果有回傳值就跟一般方法一樣
+
+呼叫建構子時需要使用new關鍵字，以生成物件，同時會初始化
+
+this關鍵字(this.): 當建構子參數與物件資料同名時，可以用this區別(this指的是物件資料並不是參數)
+this建構子(this()): 可以呼叫相同類別底下的另一個建構元
+
+public class Goods {
+	  public int gno;
+	  public double gprice;
+
+	  public Goods (int gno, double gprice) {
+		  this.gno = gno;
+		  this.gprice = gprice;
+	  }
+	     
+	  public Goods (int gno) {
+		  this(gno, 0.0);  // 呼叫 public Goods (int gno, double gprice) {}
+	  }
+	    
+	  public Goods (double gprice) {
+		  this(0, gprice);  // 呼叫 public Goods (int gno, double gprice) {}
+	  }
+	 
+	  public Goods () {
+		  this(0, 0.0);  // 呼叫 public Goods (int gno, double gprice) {}
+	  }
+}
