@@ -1,0 +1,59 @@
+陣列 Array
+由一群相同資料型態的變數所組成，呼叫時也須使用new指令來分配儲存空間
+不一定只能放int或string，物件也可以放
+一維陣列
+宣告: 要注意宣告時必須指定長度並且無法改變
+可先不放值: int x[] = new[3];
+也可在宣告時就設值:
+int x[] = new[3];
+x[0] = 1;
+x[1] = 2;
+x[2] = 3;
+或是
+int x[] = {1, 2, 3};
+宣告時，中括號可以放在名稱的前面或後面:
+a. int x[];
+b. int[] x;
+c. int x[], y[];
+d. int[] x, y;
+
+取得長度: 陣列名稱.length
+a. 一維陣列取得的是元素個數
+b. 二維陣列取得的是橫列數
+c. length之後不可加上小括弧，因為它是屬性不是method
+
+取得陣列元素: 陣列名稱[索引值]
+
+// 把陣列內數字加總
+int[] intArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+int sum = 0;
+for (int i = 0; i < intArray.length; i++)
+    sum += intArray[i];
+
+System.out.println("sum="+sum);
+
+多維陣列
+宣告: int xx[][] = new int[4][5];
+也像一維一樣可以宣告時便給值:
+int xx[][] = {
+             {1, 2, 3},
+             {4, 5, 6}
+             };
+若是宣告非矩形陣列:
+int xx[][] = new int[3][];
+xx[0] = new int[2];
+xx[1] = new int[3];
+xx[2] = new int[4];
+
+// 把陣列內數字加總
+int[][] intArray = {
+				           { 1, 2, 3, 4, 5},
+                   { 6, 7, 8, 9, 10 }
+		               };
+int sum = 0;
+for(int i = 0; i < intArray.length; i++) {
+		for(int j = 0; j < intArray[i].length; j++)  // 該行的長度
+				sum += intArray[i][j];
+}   
+System.out.println("sum="+sum);
