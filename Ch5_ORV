@@ -46,3 +46,12 @@ public static void main(String[] args){
   System.out.println(myShoe.price);
 }
 >>>10.0
+
+進階陣列操作
+排序
+a. static viod Arrays.sort(陣列名稱)
+b. 讓元素由小到大
+
+搜尋
+a. static int Arrays.binarySearch(陣列名稱, 想搜尋的值)
+b. 使用二分搜尋法，搜索陣列內某個值的位址
